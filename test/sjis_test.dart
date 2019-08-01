@@ -1,9 +1,9 @@
-import 'package:unittest/unittest.dart';
+import 'package:test/test.dart';
 import '../lib/sjis.dart';
 import 'dart:io';
 
-_assertPairs(matcher) {
-  var file = new File(r"../tool/asset/sjis-0213-2004-std.txt");
+_assertPairs(Function(int, int, String) matcher) {
+  var file = new File(r"./tool/asset/sjis-0213-2004-std.txt");
   var lines = file.readAsLinesSync();
   
   // Delete first 21 lines
@@ -38,8 +38,8 @@ _assertPairs(matcher) {
   }
 }
 
-_assertPairsForMS932(matcher) {
-  var file = new File(r"../tool/asset/sjis-0213-2004-std.txt");
+_assertPairsForMS932(Function(int, int, String) matcher) {
+  var file = new File(r"./tool/asset/sjis-0213-2004-std.txt");
   var lines = file.readAsLinesSync();
   
   // Delete first 21 lines

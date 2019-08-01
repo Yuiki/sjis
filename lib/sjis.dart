@@ -50,7 +50,7 @@ class SjisEncoder extends Converter<String,List<int>> {
   
   @override
   List<int> convert(String input) {
-    var sjisCodeUnits = [];
+    var sjisCodeUnits = <int>[];
     
     input.runes.forEach((codeUnit) {
       if(utf_sjis.containsKey(codeUnit)) {
